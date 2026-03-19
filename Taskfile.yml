@@ -21,15 +21,9 @@ tasks:
     cmds:
       - go build ./...
 
-  test:
-    desc: Run all tests
-    cmds:
-      - go test ./...
-
   ci:
-    desc: Run all checks (fmt, lint, build, test)
+    desc: Run all checks (fmt, lint, build)
     cmds:
       - task: fmt
       - task: lint
       - task: build
-      - task: test

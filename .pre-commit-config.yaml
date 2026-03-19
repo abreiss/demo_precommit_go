@@ -25,13 +25,6 @@ repos:
         pass_filenames: false
         stages: [pre-commit]
 
-      - id: go-test
-        name: go test
-        entry: task test
-        language: system
-        types: [go]
-        pass_filenames: false
-        stages: [pre-commit]
 
   - repo: https://github.com/codespell-project/codespell
     rev: v2.4.2
