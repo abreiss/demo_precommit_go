@@ -1,0 +1,35 @@
+version: "3"
+
+tasks:
+  default:
+    desc: List available tasks
+    cmds:
+      - task --list
+
+  fmt:
+    desc: Format Go code
+    cmds:
+      - gofmt -l -w .
+
+  lint:
+    desc: Run golangci-lint
+    cmds:
+      - golangci-lint run ./...
+
+  build:
+    desc: Build the project
+    cmds:
+      - go build ./...
+
+  test:
+    desc: Run all tests
+    cmds:
+      - go test ./...
+
+  ci:
+    desc: Run all checks (fmt, lint, build, test)
+    cmds:
+      - task: fmt
+      - task: lint
+      - task: build
+      - task: test

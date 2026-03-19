@@ -1,0 +1,37 @@
+repos:
+  - repo: local
+    hooks:
+      - id: go-fmt
+        name: gofmt
+        entry: gofmt -l -w .
+        language: system
+        types: [go]
+        pass_filenames: false
+
+      - id: go-lint
+        name: golangci-lint
+        entry: task lint
+        language: system
+        types: [go]
+        pass_filenames: false
+
+      - id: go-build
+        name: go build
+        entry: task build
+        language: system
+        types: [go]
+        pass_filenames: false
+
+      - id: go-test
+        name: go test
+        entry: task test
+        language: system
+        types: [go]
+        pass_filenames: false
+
+  - repo: https://github.com/codespell-project/codespell
+    rev: v2.4.2
+    hooks:
+      - id: codespell
+        name: codespell (commit message)
+        stages: [commit-msg]
