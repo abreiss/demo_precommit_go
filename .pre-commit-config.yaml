@@ -7,6 +7,7 @@ repos:
         language: system
         types: [go]
         pass_filenames: false
+        stages: [pre-commit]
 
       - id: go-lint
         name: golangci-lint
@@ -14,6 +15,7 @@ repos:
         language: system
         types: [go]
         pass_filenames: false
+        stages: [pre-commit]
 
       - id: go-build
         name: go build
@@ -21,6 +23,7 @@ repos:
         language: system
         types: [go]
         pass_filenames: false
+        stages: [pre-commit]
 
       - id: go-test
         name: go test
@@ -28,6 +31,7 @@ repos:
         language: system
         types: [go]
         pass_filenames: false
+        stages: [pre-commit]
 
   - repo: https://github.com/codespell-project/codespell
     rev: v2.4.2
